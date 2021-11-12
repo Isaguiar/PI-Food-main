@@ -1,0 +1,15 @@
+.container{
+	background-color: linen;
+	display: flex;
+	justify-content: center;
+	padding: 5px;
+}
+
+.container button{
+	background-color: linen;
+	font-size: calc(9px + 2vmin);
+	padding: 5px;
+	border-color: linen;
+	color: peru;
+
+}

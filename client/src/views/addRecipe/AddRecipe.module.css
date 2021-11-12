@@ -1,0 +1,62 @@
+.container{
+  position: relative;
+  margin-left: 15rem; 
+  margin-top: .5rem;
+  background-color: linen;
+  padding: 30px;
+  hight: 100vh;
+  width: 150vh;
+  border-radius: 10px;
+  font-size: calc(9px + 2vmin);
+  font-style: italic;
+  color: saddlebrown;
+}
+
+.container input[type=text], container select, container textarea{
+  padding: .7rem;
+  border: 1px solid linen;
+  border-radius: 5px;
+}
+
+.container input[type=text], container select, container textarea{
+  width: 300%;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.container select{
+ font-size: calc(3px + 2vmin);
+ color: sienna;
+}
+
+.container label {
+  padding: .75rem;
+  display: inline-block;
+} 
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+

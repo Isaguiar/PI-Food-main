@@ -1,0 +1,15 @@
+.container{
+	background-color: linen;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+}
+
+.choice{
+	background-image: url('../../img/lum3n-XMLLRlga05I-unsplash.jpg');
+	font-size: calc(10px + 2vmin);
+	border-radius: 30%;
+	shape-image-threshold: all;
+	
+}

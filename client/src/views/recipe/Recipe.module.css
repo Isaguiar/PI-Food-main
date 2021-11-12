@@ -1,0 +1,28 @@
+.rc{
+	background-color: sienna;
+	backdrop-filter: opacity(70%);
+	diplay: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	
+}
+
+.img{
+	margin-left: 1.5rem;
+	height: 40%;
+	width: 100vw;
+}
+
+.dt{
+	background-color: ;
+	font-size: calc(12px + 2vmin);
+	diplay: grid;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	text-decoration: none;
+	color: black;
+	padding: 0.75rem;
+}

@@ -1,0 +1,13 @@
+.container{
+	background-color: black;
+	display: flex;
+	flex-direction: row;
+	font-size: calc(6px + 2vmin);
+	justify-content: space-around;
+	padding: 10px;
+}
+
+.container a{
+	color: whitesmoke;
+	text-decoration: none;
+}

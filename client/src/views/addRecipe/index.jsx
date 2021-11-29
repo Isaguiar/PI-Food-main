@@ -37,16 +37,16 @@ export default function AddRecipe(){
 	   if (!obj.title) {
          obj.title= 'Campo obligatorio.'
       }; 
-      else if(!obj.summary.length) {
+      if (!obj.summary.length) {
          obj.summary= 'Campo obligatorio.'
       };
-      else if(!parseInt(obj.score)) {
+      if(!parseInt(obj.score)) {
        obj.score= 'Nota de 0 a 100.'
     };
-      else if(!parseInt(obj.heakthScore)) {
+      if(!parseInt(obj.heakthScore)) {
          obj.healthScore= 'Nota de 0 a 100.'
       };
-      else if(!isValidURL(obj.image)) {
+      if(!isValidURL(obj.image)) {
          obj.image= 'Hay que informar el link.'
       };
 

@@ -5,7 +5,7 @@ import React from 'react';
 export default function Recipe({title, diets, image}){
 	return(    
     <div className={styles.rc}>
-        <div>
+        <div className={styles.tt}>
             <p>{title}</p>
         </div>
         <div className ={styles.img}>

@@ -8,6 +8,7 @@ import Pagination from './components/pagination';
 import ChoicesBar from './components/choicesBar';
 import Details from './views/details';
 import Add from './views/addRecipe';
+import Entrance from './components/entrance';
 import {getRecipes, getTypes, updateList } from './actions';
 
 
@@ -22,9 +23,15 @@ function App() {
   return (
 
     <div className={styles.App}>
-      <div className={styles.header}>
+
+      <div className= {styles.header}>
         <h1>Sabor y Nutrición</h1> 
       </div>
+        
+      <div className= {styles.ent}> 
+        <Route path exact = "/" component = {Entrance}/> 
+      </div>
+
         <Route path = "/recipes"  component = {NavBar}/>
         <Route path = "/recipes/add" exact component = {Add}/>
         <Route path = "/recipes/home" exact component = {ChoicesBar} />

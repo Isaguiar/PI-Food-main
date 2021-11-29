@@ -33,6 +33,19 @@
   padding: .75rem;
   display: inline-block;
 } 
+.container button{
+  background-color: burlywood;
+  font-size: calc(3px + 2vmin);
+  color: sienna;
+  height: 5vh;
+  border-color: burlywood;
+  border-radius: 7%;
+
+}
+.container button:hover{
+  background-color: darksalmon;
+
+}
 
 .col-25 {
   float: left;
@@ -59,4 +72,6 @@
   clear: both;
 }
 
-
+.red{
+  color: red;
+}

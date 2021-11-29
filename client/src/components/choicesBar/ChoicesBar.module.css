@@ -1,15 +1,28 @@
 .container{
 	background-color: linen;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	display: grip;
+	grid-template-rows: auto auto auto auto auto auto auto;
+	grid-template-columns: auto auto;
+	padding: 10px;
 
 }
 
-.choice{
+.choice, .usu{
 	background-image: url('../../img/lum3n-XMLLRlga05I-unsplash.jpg');
-	font-size: calc(10px + 2vmin);
-	border-radius: 30%;
-	shape-image-threshold: all;
+	color: whitesmoke;
+	border-radius: 50%;
+	shape-image-threshold: 0.7;
+	height: 12vh;
+}
+
+.choice{
+	width: 7vw;
+	font-size: calc(1px + 2vmin);
+}
+
+.usu{
 	
+	width: 10vw;
+	font-size: calc(6px + 2vmin);
+
 }

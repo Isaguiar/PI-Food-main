@@ -1,0 +1,5 @@
+function testing(){
+	let a =[[], []].flat();
+    console.log(a);
+}
+testing();

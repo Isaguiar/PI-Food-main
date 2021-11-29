@@ -76,6 +76,13 @@ function transform(str){
     return str;
     
 }
+
+function findLength(){
+    const a = '  ';
+    console.log(!a);
+
+}
 //cutArray('image asc');
 //sorting();
-transform('<p>gluten makes you</p>');
+findLength();
+//transform('<p>gluten makes you</p>');

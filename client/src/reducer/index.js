@@ -33,7 +33,7 @@ switch(action.type){
   case 'FIND_BY_TITLE':
     return {
       ... state,
-      recipes: action.payload
+      recipes: action.payload,
     }  
   case 'DISPLAY_RECIPES':
     return{
@@ -41,7 +41,7 @@ switch(action.type){
       displayedRecipes: action.payload
   }
   case 'GET_DETAILS':
-        return {
+      return {
       ...state,
        recipe: action.payload
        }

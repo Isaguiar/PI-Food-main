@@ -1,0 +1,13 @@
+.container{
+	background-color: black;
+
+}
+.container button, .container input{
+	font-size: calc(4px + 2vmin);
+	height: 4vh;
+}
+
+.container button{
+	background-color: black;
+	color: whitesmoke;
+}

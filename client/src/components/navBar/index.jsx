@@ -11,7 +11,7 @@ export default function NavBar(){
 		<div className= {styles.container}>
 
 		 <Link to = '/recipes/home'><span>HOME</span></Link>
-         <Link to = '/recipes/add'><span>SUGIRA UNA RECETA...</span></Link>
+         <Link to = '/recipes/add'><span>SUGIERA UNA RECETA...</span></Link>
          <span><SearchBar /></span>
          <span><SortList /></span>
 		</div>)

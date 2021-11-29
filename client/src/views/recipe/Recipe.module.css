@@ -5,24 +5,47 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-
+	flex-basis: max-content;
+	box-sizing: border-box;
 	
 }
 
 .img{
-	margin-left: 1.5rem;
-	height: 40%;
-	width: 100vw;
+	margin-left: 3.5rem;
+	
 }
 
 .dt{
-	background-color: ;
-	font-size: calc(12px + 2vmin);
+	margin-left: 3.5rem;
+	margin-right: 3.5rem;
+	font-size: calc(7px + 2vmin);
 	diplay: grid;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
-	text-decoration: none;
+	text-decoration-line: none;
 	color: black;
 	padding: 0.75rem;
+	box-sizing: border-box;
+}
+.tt{
+	padding: 3px;
+	margin-left: 10px;
+	font-family: cursive;
+
+}
+
+.rc img{
+	height: 35vh;
+	width: 55vh; 
+}
+
+.rc p{
+	font-size: calc(9px + 2vmin);
+	color: white;
+}
+
+.dt span{
+	border-color: linen;
+
 }

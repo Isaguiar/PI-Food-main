@@ -17,7 +17,7 @@ export function getRecipes(){
                 type: 'GET_RECIPES', 
                 payload: response.data.map(item => item)
             });
-        });
+        }).catch(err => alert(err))
     };
 
 }
@@ -56,10 +56,12 @@ export function findByTitle(title){
     return (dispatch) => {
         axios.get(`http://localhost:3001/recipes?name=${title}`)
             .then(response => {
-            dispatch({
-                type: 'FIND_BY_TITLE',
-                payload: response.data
-            })
+                if(!response.data.length)alert ('Lástima! No encontramos ninguna receta!')
+                    dispatch({
+                    type: 'FIND_BY_TITLE',
+                    payload: response.data
+            });
+                    
         } )
     }
 };
@@ -71,9 +73,3 @@ export function displayRecipes(payload){
     }
 };
 
-export function sortRecipes(payload){
-    return{ 
-        type: 'SORT-RECIPES',
-        payload
-    }
-};

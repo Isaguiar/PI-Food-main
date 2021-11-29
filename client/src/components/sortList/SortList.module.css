@@ -1,3 +1,8 @@
 .container{
-	background-color: linen;
+	background-color: black;
+
+}
+.container select{
+	font-size: calc(4px + 2vmin);
+	height: 4vh;
 }

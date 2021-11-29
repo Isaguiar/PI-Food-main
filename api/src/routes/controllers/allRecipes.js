@@ -26,7 +26,7 @@ async function  findAllRecipesFromApi(){
     };
  });
 }else{
-  allRecipes = recipeList;
+  allRecipes = [];
 }
  console.log(allRecipes);
  return allRecipes;

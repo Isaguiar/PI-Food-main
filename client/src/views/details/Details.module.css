@@ -1,7 +1,62 @@
 .container{
-	background-color: whitesmoke;
-	width: 95%;
-	margin-left: 4rem;
-	display: inline-grid;
+	background-color: linen;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	
+}
+.intro, .text{
+	background-color: white;
+	margin-left: 5rem;
+	margin-top: 5rem;
+	border: 4px double peru;
+	border-radius: 10%;
+	box-sizing: border-box;
+}
+
+.intro h2{
+	font-style: italic;
+	margin-left: 3rem;
+	margin-right: 3rem;
+	padding: 20px;
+	color: peru;
+}
+.intro img{
+	border: 1px solid white;
+	border-radius: 3px;
+	display: flex;
+	align-items: center;
+	margin-left: 3rem;
+	height: 25vh;
+	width: 25vw;
+	padding: ;
+}
+
+.intro p, .text{
+	display: flex;
+	justify-content: right;
+	margin-top: 3rem;
+	color: chocolate;
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+	padding: 5px;
+	font-size: calc(4px + 2vmin);
+}
+.text{
+	diplay: flex;
+	flex-direction: column;
+	margin-right: 5rem;
+}
+.sc{
+	display: flex;
+	flex-direction: column;
+	font-size: calc(2px + 2vmin);
 
 }
+.sc span{
+	display: flex;
+	justify-content: space-around;
+
+}
+
+

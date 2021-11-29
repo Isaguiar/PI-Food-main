@@ -43,7 +43,7 @@ export default function ChoicesBar(){
 	<>
 	<div className= {styles.container}>
 	{types?.map(item=> {return <button className= {styles.choice} type= "button" value= {item.name} key={item.id} onClick={handleOnClick1}>{item.name} </button>})}
-	<button className= {styles.choice} type = 'button' key='invented' value= 'Sugerencias de los usuarios' onClick ={handleOnClick2}>Sugerencias de los usuarios</button>
+	<button className= {styles.choice} type = 'button' key='invented' value= 'recetas de los usuarios' onClick ={handleOnClick2}>recetas de los usuarios</button>
 	<button className= {styles.choice} type = 'button' key='inventedtoo' value= 'todas' onClick ={handleOnClick3}>todas</button>
 	</div>
 	</>)

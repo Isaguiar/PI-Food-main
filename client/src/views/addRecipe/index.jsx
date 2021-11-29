@@ -23,34 +23,47 @@ export default function AddRecipe(){
 		image: ''
 	});
    
-   const[errors, setErrors] = useState({});
+    const[errors, setErrors] = useState({
+   });
+
 
    function isValidURL(string) {
         var res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
         return (res !== null);
     };
 
-	function validate(recipe) {
+	function validate(obj) {
 
-	   if (!recipe.title.length) errors.title = 'Campo obligatorio.';
-      else if(!recipe.summary.length) errors.summary = 'Campo obligatorio.';
-      else if(!parseInt(recipe.score))  errors.score = 'Nota de 0 a 100.'
-      else if(!parseInt(recipe.heakthScore)) errors.healthScore = 'Nota de 0 a 100.'
-      else if(!isValidURL(recipe.image)) errors.image = 'Hay que informar el link.' 
+	   if (!obj.title) {
+         obj.title= 'Campo obligatorio.'
+      }; 
+      else if(!obj.summary.length) {
+         obj.summary= 'Campo obligatorio.'
+      };
+      else if(!parseInt(obj.score)) {
+       obj.score= 'Nota de 0 a 100.'
+    };
+      else if(!parseInt(obj.heakthScore)) {
+         obj.healthScore= 'Nota de 0 a 100.'
+      };
+      else if(!isValidURL(obj.image)) {
+         obj.image= 'Hay que informar el link.'
+      };
 
-   return errors;
+   return obj;
 
    };
-
+    
 	const handleChange = function(e){
 			setRecipe({
 			...recipe,
 			[e.target.name]: e.target.value
 		});
-			setErrors(validate({
-				...recipe,
-				[e.target.name]: e.target.value
-			}))
+         setErrors(validate({
+            ...recipe, 
+            [e.target.name]: e.target.value
+         }));
+
 	}
         
     const handleSelect = function(e){
@@ -58,10 +71,10 @@ export default function AddRecipe(){
 			...recipe,
 			diet: [...recipe.diet, e.target.value]
 		})
-	}   
+	} 
+
 	const handleSubmit= function(e){
 	 e.preventDefault();
-
 	 dispatch(createNewRecipe(recipe));
 	 alert('Felicitaciones! Acabaste de enviar una nueva receta!')
 	 setRecipe({
@@ -73,6 +86,7 @@ export default function AddRecipe(){
 		instructions:'',
 		image: ''
 	});
+
 	 history.push('/recipes/home');
 	}
 
@@ -81,10 +95,10 @@ export default function AddRecipe(){
     	   <form onSubmit = {handleSubmit}>
 
     	      <div className = {styles.row}>
-    	   		<div className = {styles.col-25}>
+    	   		<div className = {styles.col-25} >
             		<label htmlFor="title">Nombre</label>
             	</div>
-            	<div className = {styles.col-75}>	
+            	<div className = {styles.col-75} className = {errors.title && styles.red}>	
             		<input type="text" name="title" onChange = {handleChange} />
             	</div>
             </div>
@@ -102,7 +116,7 @@ export default function AddRecipe(){
             </div>
 
             <div className = {styles.row}>
-               <div className = {styles.col-25}>
+               <div className = {styles.col-25} className= {errors.summary && styles.red}>
                   <label htmlFor="summary">Resumen del plato</label>
                </div>
                <div className = {styles.col-75}>
@@ -112,7 +126,7 @@ export default function AddRecipe(){
             </div>
 
             <div className = {styles.row}>
-               <div className = {styles.col-25}>
+               <div className = {styles.col-25} className= {errors.score && styles.red}>
                   <label htmlFor="score">Puntuación</label>
                </div>
                <div className = {styles.col-75}>
@@ -121,7 +135,7 @@ export default function AddRecipe(){
             </div>
 
             <div className = {styles.row}>
-               <div className = {styles.col-25}>
+               <div className = {styles.col-25} className= {errors.healthScore && styles.red}>
                   <label htmlFor="healthScore">Nivel de "comida saludable"</label>
                </div>
                <div className = {styles.col-75}>
@@ -139,7 +153,7 @@ export default function AddRecipe(){
             </div>
             </div>
             <div className = {styles.row}>
-               <div className = {styles.col-25}>
+               <div className = {styles.col-25} className= {errors.image && styles.red}>
                   <label htmlFor="image">Imagen</label>
                </div>
                <div className = {styles.col-75}>
@@ -147,9 +161,8 @@ export default function AddRecipe(){
                </div>
             </div>
 
-            <div className = {styles.col-75}>
               <button type="submit">Enviar la nueva receta</button>
-            </div>
+
          </form>
       </div>
    )

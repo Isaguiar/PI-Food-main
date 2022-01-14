@@ -36,8 +36,9 @@ export default function Home(){
 
   if(!displayedRecipes){
   	return (
-  		<div>
-  		  <p>Loading...</p>
+  		<div className = {styles.containerLoad}>
+        <img src="https://cdn.dribbble.com/users/645440/screenshots/3266490/loader-2_food.gif" alt="Loading---" />
+  		  <h3>Loading...</h3>
   		</div>
   		)
   }

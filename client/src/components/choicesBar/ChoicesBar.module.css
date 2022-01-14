@@ -26,3 +26,9 @@
 	font-size: calc(6px + 2vmin);
 
 }
+
+.choice:hover{
+	border-color: black;
+    border-size: 100px;
+    color: peru;
+}

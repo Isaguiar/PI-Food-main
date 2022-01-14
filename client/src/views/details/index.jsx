@@ -11,8 +11,9 @@ export default function Details(){
 
     if(!recipe){
   	    return (
-  		<div className={styles.container}>
-  		  <p>Loading...</p>
+  		<div className={styles.containerLoad}>
+  		    <img src="https://cdn.dribbble.com/users/645440/screenshots/3266490/loader-2_food.gif" alt="Loading---"/>
+  		    <h3>Loading...</h3>
   		</div>
   		)
    }
@@ -38,12 +39,12 @@ export default function Details(){
 		    </div>
 			<div className= {styles.text}>
 				<div className= {styles.sc}>
-				{recipe.score !== null && <span>Puntuación por sabor:{recipe.score}</span>}	
-				{recipe.healthScore !== null && <span>Saludable:{recipe.score}</span>}
-				</div>
-	    		<p>Tipos de dieta:</p>
-	    			{recipe.diets.map(item => <p key={item}> {item} </p> )}
-				 {recipe.instructions !== null && <p>{instructions}</p>}
+				{recipe.score !== null && <span><b>Puntuación por sabor:</b> &nbsp;  {recipe.score}</span>}	
+				{recipe.healthScore !== null && <span><b>Saludable:&nbsp;</b>   {recipe.score}</span>}
+	    		<span className= {styles.dt}>Tipos de dieta:</span>
+	    			{recipe.diets.map(item => <span key={item}> {item} </span> )}  
+				    {recipe.instructions !== null && <p><b>Paso a paso:</b><br/>{instructions}</p>}
+				</div>	
 			</div>	
 		</div>
 		)

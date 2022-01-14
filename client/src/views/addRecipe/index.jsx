@@ -2,7 +2,7 @@ import styles from './AddRecipe.module.css';
 import React, {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
-import {createNewRecipe, getTypes} from '../../actions';
+import {createNewRecipe, getTypes, getRecipes, updateList} from '../../actions';
 
 
 export default function AddRecipe(){
@@ -10,6 +10,7 @@ export default function AddRecipe(){
 	const dispatch = useDispatch();
 	const history = useHistory();
 	const typeSelection = useSelector(state => state.dietTypes);
+   const allRecipes =useSelector(state => state.allRecipes);
 
    if(!typeSelection.length) dispatch(getTypes());
    
@@ -17,52 +18,18 @@ export default function AddRecipe(){
 		title: '',
 		diet: [],
 		summary: '',
-		score: '',
-		healthScore: '',
+		score: 0,
+		healthScore: 0,
 		instructions:'',
 		image: ''
 	});
-   
-    const[errors, setErrors] = useState({
-   });
-
-
-   function isValidURL(string) {
-        var res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
-        return (res !== null);
-    };
-
-	function validate(obj) {
-
-	   if (!obj.title) {
-         obj.title= 'Campo obligatorio.'
-      }; 
-      if (!obj.summary.length) {
-         obj.summary= 'Campo obligatorio.'
-      };
-      if(!parseInt(obj.score)) {
-       obj.score= 'Nota de 0 a 100.'
-    };
-      if(!parseInt(obj.heakthScore)) {
-         obj.healthScore= 'Nota de 0 a 100.'
-      };
-      if(!isValidURL(obj.image)) {
-         obj.image= 'Hay que informar el link.'
-      };
-
-   return obj;
-
-   };
-    
+      
 	const handleChange = function(e){
 			setRecipe({
 			...recipe,
 			[e.target.name]: e.target.value
 		});
-         setErrors(validate({
-            ...recipe, 
-            [e.target.name]: e.target.value
-         }));
+         
 
 	}
         
@@ -73,22 +40,29 @@ export default function AddRecipe(){
 		})
 	} 
 
-	const handleSubmit= function(e){
+	const handleSubmit= async  function(e){
 	 e.preventDefault();
-	 dispatch(createNewRecipe(recipe));
-	 alert('Felicitaciones! Acabaste de enviar una nueva receta!')
+    console.log(12, recipe);
+    try{
+	 await dispatch(createNewRecipe(recipe));
+    alert('Felicitaciones! Acabaste de enviar una nueva receta!');
 	 setRecipe({
 		title: '',
 		diet: [],
 		summary: '',
-		score: '',
-		healthScore: '',
+		score: 0,
+		healthScore: 0,
 		instructions:'',
 		image: ''
 	});
-
+    await dispatch(getRecipes());
+    await dispatch(updateList(allRecipes));
 	 history.push('/recipes/home');
-	}
+	 }catch (err){
+      alert(err)
+   };
+
+   }
 
      return (
        <div className= {styles.container} >
@@ -96,10 +70,10 @@ export default function AddRecipe(){
 
     	      <div className = {styles.row}>
     	   		<div className = {styles.col-25} >
-            		<label htmlFor="title">Nombre</label>
+            		<label htmlFor="title">Nombre*</label>
             	</div>
-            	<div className = {styles.col-75} className = {errors.title && styles.red}>	
-            		<input type="text" name="title" onChange = {handleChange} />
+            	<div className = {styles.col-75}>	
+            		<input type="text" name="title" onChange = {handleChange} required/>
             	</div>
             </div>
 
@@ -116,30 +90,30 @@ export default function AddRecipe(){
             </div>
 
             <div className = {styles.row}>
-               <div className = {styles.col-25} className= {errors.summary && styles.red}>
-                  <label htmlFor="summary">Resumen del plato</label>
+               <div className = {styles.col-25} >
+                  <label htmlFor="summary">Resumen del plato*</label>
                </div>
                <div className = {styles.col-75}>
-                  <textarea  name="summary" onChange = {handleChange}>
+                  <textarea  name="summary"  onChange = {handleChange} required>
                   </textarea>
                </div>
             </div>
 
             <div className = {styles.row}>
-               <div className = {styles.col-25} className= {errors.score && styles.red}>
+               <div className = {styles.col-25} >
                   <label htmlFor="score">Puntuación</label>
                </div>
                <div className = {styles.col-75}>
-                  <input type="text" name="score" onChange = {handleChange} />
+                  <input type="number" name="score" min="10" max="100" onChange = {handleChange}  />
                </div>
             </div>
 
             <div className = {styles.row}>
-               <div className = {styles.col-25} className= {errors.healthScore && styles.red}>
+               <div className = {styles.col-25} >
                   <label htmlFor="healthScore">Nivel de "comida saludable"</label>
                </div>
                <div className = {styles.col-75}>
-                  <input type="text" name="healthScore" onChange = {handleChange} />
+                  <input type="number" name="healthScore" onChange = {handleChange} min="10" max="100" />
                </div>
             </div>
 
@@ -153,11 +127,11 @@ export default function AddRecipe(){
             </div>
             </div>
             <div className = {styles.row}>
-               <div className = {styles.col-25} className= {errors.image && styles.red}>
+               <div className = {styles.col-25} >
                   <label htmlFor="image">Imagen</label>
                </div>
                <div className = {styles.col-75}>
-                  <input type="text" name="image" onChange = {handleChange} />
+                  <input type="url" name="image" onChange = {handleChange} />
                </div>
             </div>
 

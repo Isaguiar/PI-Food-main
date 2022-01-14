@@ -1,32 +1,46 @@
 .container{
   position: relative;
-  margin-left: 15rem; 
-  margin-top: .5rem;
-  background-color: linen;
+  margin-left: 0px; 
+  margin-right: 0px;
+  margin-top: 0px;
+  background-image: linear-gradient(to bottom right, peru, linen);
   padding: 30px;
-  hight: 100vh;
-  width: 150vh;
+  hight: 120vh;
+  width: 235vh;
   border-radius: 10px;
   font-size: calc(9px + 2vmin);
   font-style: italic;
   color: saddlebrown;
+  display: flex;
+  flex-direction: center;
 }
 
-.container input[type=text], container select, container textarea{
+.container input, .container select, .container textarea{
   padding: .7rem;
-  border: 1px solid linen;
+  border: 1px solid beige;
   border-radius: 5px;
 }
 
-.container input[type=text], container select, container textarea{
+.container input:focus, .container select:focus, .container textarea:focus{
+  border: none !important;
+  outline: none !important;
+}
+
+.container input, container select, container textarea{
   width: 300%;
   box-sizing: border-box;
-  resize: vertical;
+  resize: horizontal;
 }
 
 .container select{
  font-size: calc(3px + 2vmin);
  color: sienna;
+ height: 6vh;
+}
+
+.container textarea{
+  height: 10vh;
+  width: 40vw;
 }
 
 .container label {
@@ -35,43 +49,49 @@
 } 
 .container button{
   background-color: burlywood;
-  font-size: calc(3px + 2vmin);
+  background-size: cover;
+  font-size: calc(5px + 2vmin);
   color: sienna;
-  height: 5vh;
+  box-shadow: 5px 5px inset;
+  height: 10vh;
   border-color: burlywood;
   border-radius: 7%;
+  margin-left: 50rem;
 
 }
-.container button:hover{
-  background-color: darksalmon;
-
+ .container button:hover{
+  background-color: peru;
 }
 
 .col-25 {
   float: left;
   width: 25%;
-  margin-top: 6px;
+  margin-top: 10px;
+
 }
 
 
 .col-75 {
   float: left;
-  width: 75%;
-  margin-top: 6px;
+
 }
 
 .row {
   display: flex;
   flex-direction: row;
   justify-content: stretch;
+  align-items: center;
+  margin-left: 20rem;
+  width: 50vw;
+  height: 11vh;
+  border-radius: 5px;
+  background-color: transparent;
+
 }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.row input:invalid textarea:invalid{
+  border-color: red !important;
+  border-width: 3px;
 }
 
-.red{
-  color: red;
-}
+

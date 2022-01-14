@@ -1,14 +1,30 @@
 .container{
-	background-color: linen;
+	background-color: black;
 	display: flex;
 	justify-content: center;
-	padding: 5px;
+	padding: 2px;
+	height: 10vh;
 }
 
 .container button{
-	background-color: linen;
+	background-color: black;
+	border-radius: 10%;
 	font-size: calc(9px + 2vmin);
 	padding: 5px;
-	border-color: linen;
-	color: peru;
+	border-color: black;
+	color: white;
 }
+
+.container button:focus{
+	text-decoration-line: underline;
+	text-decoration-color: white;
+	text-underline-position: under;
+	text-decoration-style: unset ;
+}
+
+.container button:hover {
+	color: peru;
+}	
+
+
+

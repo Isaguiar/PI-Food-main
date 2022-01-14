@@ -9,12 +9,11 @@ import ChoicesBar from './components/choicesBar';
 import Details from './views/details';
 import Add from './views/addRecipe';
 import Entrance from './components/entrance';
-import {getRecipes, getTypes, updateList } from './actions';
+import {getRecipes, getTypes} from './actions';
 
 
 function App() {
     const dispatch = useDispatch();
-    const allRecipes = useSelector(state => state.allRecipes);
     
     useEffect( ()=>dispatch(getRecipes()), []);
 
@@ -37,7 +36,6 @@ function App() {
         <Route path = "/recipes/home" exact component = {ChoicesBar} />
         <Route path = "/recipes/home" exact component = {Pagination} />
         <Route path = "/recipes/home" exact component = {Home} />
-        <Route path = "/recipes/home" exact component = {Pagination} />
         <Route path= "/recipes/details/:id" exact component = {Details}/>
       
     </div>

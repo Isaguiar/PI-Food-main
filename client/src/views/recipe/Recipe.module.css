@@ -1,5 +1,5 @@
 .rc{
-	background-color: sienna;
+	background-color: transparent;
 	backdrop-filter: opacity(70%);
 	diplay: flex;
 	flex-direction: column;
@@ -7,6 +7,7 @@
 	justify-content: center;
 	flex-basis: max-content;
 	box-sizing: border-box;
+	height: 100%;
 	
 }
 
@@ -18,34 +19,39 @@
 .dt{
 	margin-left: 3.5rem;
 	margin-right: 3.5rem;
+	background-color: sienna;
+	height: 5rem;
+	width: 61vh; 
 	font-size: calc(7px + 2vmin);
 	diplay: grid;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-around;
 	text-decoration-line: none;
-	color: black;
 	padding: 0.75rem;
 	box-sizing: border-box;
 }
 .tt{
-	padding: 3px;
-	margin-left: 10px;
+	padding: 10px;
+	margin-left: 3.4rem;
+	margin-right: 3.4rem;
 	font-family: cursive;
+	height: 12vh;
 
 }
 
 .rc img{
 	height: 35vh;
-	width: 55vh; 
+	width: 61vh; 
 }
 
 .rc p{
 	font-size: calc(9px + 2vmin);
-	color: white;
+	color: black;
 }
 
 .dt span{
-	border-color: linen;
-
+	height: 20vh;
+	padding-right: 15px;
+	color: white;
 }

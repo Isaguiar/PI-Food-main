@@ -9,11 +9,11 @@ function splitParameters(str, arr){
 
     for(let i= 0; i < arr.length; i++){
         let item = arr[i][property];
-        if(item !== null && !parseInt(item)){
+        if(item !== null && parseInt(item) !==0 && !parseInt(item) ){
             numeric = false;
             break;
             
-        }else if(item !== null && parseInt(item)){
+        }else if(item !== null && parseInt(item) || parseInt(item) ===0){
             numeric = true;
             break;
         }
@@ -28,23 +28,25 @@ function splitParameters(str, arr){
 
 function sortArray(param, arr){
     let {property, criterium, numeric} = param;
-    
-    if(numeric){
-        if(criterium === 'asc'){
-            return arr.sort((a, b)=> a[property] - b[property]);
-        }else{
-            return arr.sort((a, b)=> b[property] - a[property]);
-        }
+    if (arr.length >1){
+        if(numeric){
+            if(criterium === 'asc'){
+                return arr.sort((a, b)=> a[property] - b[property]);
+            }else{
+                return arr.sort((a, b)=> b[property] - a[property]);
+            }
 
+        }else{
+            if(criterium === 'asc' && numeric === false){
+                return arr.sort((a, b)=> a[property].localeCompare(b[property]));
+            }else{
+                return arr.sort((a, b)=> b[property].localeCompare(a[property]));
+            }
+
+        }
     }else{
-        if(criterium === 'asc'){
-            return arr.sort((a, b)=> a[property].localeCompare(b[property]));
-        }else{
-            return arr.sort((a, b)=> b[property].localeCompare(a[property]));
-        }
-
+        return arr;
     }
-   
 }
 
 module.exports = {

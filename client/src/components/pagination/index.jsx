@@ -15,6 +15,7 @@ export default function Pagination(){
   const handleOnClick = function (e){
     const recipes = getRecipesPerPage(e.target.value, totalOfRecipes, recipesPerPage);
     dispatch(displayRecipes(recipes));
+    
   };
 
 
@@ -22,7 +23,7 @@ export default function Pagination(){
     <div className= {styles.container}>
       {pages?.map(page =>{
         return( 
-          <span>
+          <span >
             <Link to = "/recipes/home" >
               <button  value = {page} key= {page} onClick = {handleOnClick}>
                 {page}

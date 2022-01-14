@@ -1,5 +1,5 @@
 .container{
-	background-color: linen;
+	background-color: beige;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
@@ -12,6 +12,8 @@
 	border: 4px double peru;
 	border-radius: 10%;
 	box-sizing: border-box;
+	height: 95vh;
+	width: 45vw;
 }
 
 .intro h2{
@@ -29,14 +31,14 @@
 	margin-left: 3rem;
 	height: 25vh;
 	width: 25vw;
-	padding: ;
+	
 }
 
-.intro p, .text{
+.intro p {
 	display: flex;
 	justify-content: right;
-	margin-top: 3rem;
-	color: chocolate;
+	margin-top: 1rem;
+	color: black;
 	margin-left: 1.5rem;
 	margin-right: 1.5rem;
 	padding: 5px;
@@ -45,18 +47,45 @@
 .text{
 	diplay: flex;
 	flex-direction: column;
-	margin-right: 5rem;
+	
 }
 .sc{
 	display: flex;
 	flex-direction: column;
 	font-size: calc(2px + 2vmin);
-
+	padding: 20px;
+	margin-top: 5rem;
 }
-.sc span{
+.sc span {
 	display: flex;
-	justify-content: space-around;
+	justify-content: flex-start;
+  
 
 }
 
 
+.text p  .text span{
+	margin-top: 5rem;
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+
+}
+
+.dt{
+	margin-top: 1.5rem;
+	font-weight: bold;
+}
+
+.containerLoad{
+	background-color: white;
+	position: relative;
+	width: 110rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+}
+.containerLoad img {
+	width: 20%;
+
+}

@@ -1,6 +1,7 @@
 .container{
-	background-color: linen;
+	background-color: white;
 	position: relative;
+	margin-top: 0px;
 	margin-right: 10px;
 	height: 100vh;
 	width: 100vw;
@@ -14,4 +15,29 @@
 
 .container a{
 	text-decoration-line: none;
+}
+
+.containerLoad{
+	background-color: white !important;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	margin-top: 0px; 
+	height: 150vh;
+	width: 200vw;
+	
+}
+.containerLoad{
+	background-color: white;
+	position: relative;
+	width: 110rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+}
+.containerLoad img {
+	width: 20%;
+
 }

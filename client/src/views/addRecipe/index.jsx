@@ -1,6 +1,6 @@
 import styles from './AddRecipe.module.css';
 import React, {useState} from 'react';
-import {Link, useHistory} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import {useSelector, useDispatch} from 'react-redux';
 import {createNewRecipe, getTypes, getRecipes, updateList} from '../../actions';
 
@@ -42,7 +42,6 @@ export default function AddRecipe(){
 
 	const handleSubmit= async  function(e){
 	 e.preventDefault();
-    console.log(12, recipe);
     try{
 	 await dispatch(createNewRecipe(recipe));
     alert('Felicitaciones! Acabaste de enviar una nueva receta!');

@@ -13,7 +13,7 @@ function splitParameters(str, arr){
             numeric = false;
             break;
             
-        }else if(item !== null && parseInt(item) || parseInt(item) ===0){
+        }else if(item !== null && (parseInt(item) || parseInt(item) ===0)){
             numeric = true;
             break;
         }

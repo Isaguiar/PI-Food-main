@@ -1,6 +1,6 @@
 import styles from './App.module.css';
 import {useEffect } from 'react';
-import {useSelector, useDispatch } from 'react-redux';
+import {useDispatch } from 'react-redux';
 import {Route } from "react-router-dom";
 import Home from "./views/home";
 import NavBar from "./components/navBar";
@@ -15,9 +15,20 @@ import {getRecipes, getTypes} from './actions';
 function App() {
     const dispatch = useDispatch();
     
-    useEffect( ()=>dispatch(getRecipes()), []);
+    useEffect(() =>{ 
+      async function loadData(){
+        try{
+          await dispatch(getRecipes());
+          await dispatch(getTypes());
+        }catch (err){
+          alert(err);
+      }
+    };
+      loadData();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
-    useEffect(()=> dispatch(getTypes()), []);
+
     
   return (
 

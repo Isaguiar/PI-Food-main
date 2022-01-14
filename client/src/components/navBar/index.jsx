@@ -2,7 +2,6 @@ import styles from './NavBar.module.css';
 import {Link} from 'react-router-dom';
 import SortList from '../sortList';
 import SearchBar from '../searchBar';
-import{findByName} from '../../actions';
 
 
 export default function NavBar(){

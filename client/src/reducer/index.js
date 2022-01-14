@@ -14,7 +14,7 @@ switch(action.type){
 
   case 'GET_RECIPES':
     return {
-      ... state,
+      ...state,
       allRecipes: action.payload
     };
 
@@ -26,13 +26,13 @@ switch(action.type){
 
   case 'GET_TYPES':
     return {
-      ... state,
+      ...state,
       dietTypes: action.payload
     };
 
   case 'FIND_BY_TITLE':
     return {
-      ... state,
+      ...state,
       recipes: action.payload,
     }  
   case 'DISPLAY_RECIPES':

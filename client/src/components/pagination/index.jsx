@@ -1,8 +1,8 @@
 import styles from './Pagination.module.css';
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {getRecipes, displayRecipes} from '../../actions';
+import {displayRecipes} from '../../actions';
 import {getRecipesPerPage, getNumberOfPages} from '../../utils/recipesPerPage.js';
 
 export default function Pagination(){

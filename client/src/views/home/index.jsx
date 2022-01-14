@@ -11,7 +11,6 @@ export default function Home(){
   const dispatch = useDispatch();
   const allRecipes = useSelector(state => state.allRecipes);
   const recipes = useSelector(state => state.recipes);
-  const found = useSelector(state => state.found);
   const displayedRecipes = useSelector(state => state.displayedRecipes);
   let openingPage;
 
@@ -19,7 +18,11 @@ export default function Home(){
   	dispatch(getRecipes());
   };
   
-  useEffect(()=> dispatch(updateList(allRecipes)), []);
+  useEffect(()=> {
+    return dispatch(updateList(allRecipes))
+  },
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+   []);
   
 
    if(!recipes.length){
@@ -28,12 +31,11 @@ export default function Home(){
   	 openingPage =getRecipesPerPage(1, recipes, 9);
   	}
 
-  useEffect(()=> dispatch(displayRecipes(openingPage)), [recipes]);
+  useEffect(()=> { 
+    return dispatch(displayRecipes(openingPage))},
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+   [recipes]);
   
-
-  recipes && console.log(recipes.length);
-  displayedRecipes && console.log(displayedRecipes);
-
   if(!displayedRecipes){
   	return (
   		<div className = {styles.containerLoad}>

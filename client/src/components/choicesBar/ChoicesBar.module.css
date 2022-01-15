@@ -3,6 +3,7 @@
 	display: grip;
 	grid-template-rows: auto auto auto auto auto auto auto;
 	grid-template-columns: auto auto;
+	gap: 40px;
 	padding: 10px;
 
 }
@@ -13,6 +14,7 @@
 	border-radius: 50%;
 	shape-image-threshold: 0.7;
 	height: 12vh;
+	margin-right: 20px;
 }
 
 .choice{
